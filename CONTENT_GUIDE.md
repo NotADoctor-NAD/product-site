@@ -1,8 +1,8 @@
-# Product Content Addition Guide
+# NotADoctor Content Customization Guide
 
 ## 🎯 Overview
 
-This guide shows you exactly where and how to add your product content to the single-page Hugo site. All content is located in `themes/product-theme/layouts/index.html`.
+This guide shows you exactly where and how to customize your NotADoctor intelligent nursing device content in the single-page Hugo site. All content is located in `themes/product-theme/layouts/index.html`.
 
 ## 📝 Step-by-Step Content Addition
 
@@ -15,18 +15,18 @@ This guide shows you exactly where and how to add your product content to the si
 ```html
 <!-- Line 13: Product Name -->
 <h1 class="display-3 fw-bold mb-4 text-white" style="text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-    YOUR PRODUCT NAME HERE
+    NotADoctor
 </h1>
 
 <!-- Line 16: Product Description -->
 <p class="lead mb-4 text-white-50" style="font-size: 1.25rem; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">
-    YOUR PRODUCT DESCRIPTION HERE
+    Intelligent Nursing Device with AI-powered vital monitoring. Healthcare for all.
 </p>
 
 <!-- Lines 18-24: Pricing -->
-<span class="price-tag me-3" style="font-size: 2rem; padding: 1rem 1.5rem;">$YOUR_PRICE</span>
-<div class="text-decoration-line-through text-white-50">$REGULAR_PRICE</div>
-<div class="fw-bold text-warning">Save $SAVINGS!</div>
+<span class="price-tag me-3" style="font-size: 2rem; padding: 1rem 1.5rem;">$580 CAD</span>
+<div class="text-decoration-line-through text-white-50">$725 CAD</div>
+<div class="fw-bold text-warning">Save $145 CAD!</div>
 ```
 
 ### 2. Product Icon/Image
@@ -36,21 +36,21 @@ This guide shows you exactly where and how to add your product content to the si
 **What to change:**
 
 ```html
-<!-- Line 37: Change the icon -->
-<i class="fas fa-YOUR_ICON fa-5x text-white" style="filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));"></i>
+<!-- Line 37: Medical device icon -->
+<i class="fas fa-heartbeat fa-5x text-white" style="filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));"></i>
 ```
 
-**Popular Font Awesome icons:**
-- `fa-laptop` - for computers/laptops
-- `fa-mobile-alt` - for phones
-- `fa-headphones` - for audio devices
-- `fa-camera` - for cameras
-- `fa-gamepad` - for gaming devices
-- `fa-watch` - for smartwatches
-- `fa-tablet-alt` - for tablets
-- `fa-gem` - for premium products
-- `fa-cube` - for general products
-- `fa-star` - for featured products
+**Medical device Font Awesome icons:**
+- `fa-heartbeat` - for vital monitoring devices
+- `fa-stethoscope` - for medical equipment
+- `fa-user-md` - for medical devices
+- `fa-thermometer-half` - for temperature monitoring
+- `fa-heart` - for heart rate monitors
+- `fa-lungs` - for respiratory devices
+- `fa-brain` - for AI-powered devices
+- `fa-microchip` - for smart medical devices
+- `fa-shield-alt` - for medical safety devices
+- `fa-robot` - for AI assistants like NurseAI
 
 ### 3. Features Section
 
@@ -60,25 +60,27 @@ This guide shows you exactly where and how to add your product content to the si
 
 ```html
 <!-- Line 60: Section title -->
-<h2 class="display-5 fw-bold mb-3">Why Choose YOUR PRODUCT?</h2>
+<h2 class="display-5 fw-bold mb-3">Why Choose NotADoctor?</h2>
 
 <!-- Lines 65-120: Individual feature cards -->
-<h5 class="card-title fw-bold">YOUR FEATURE 1</h5>
-<p class="card-text text-muted">YOUR FEATURE DESCRIPTION</p>
+<h5 class="card-title fw-bold">Vital Monitoring</h5>
+<p class="card-text text-muted">Continuous monitoring of temperature, blood pressure, and SPO2</p>
 
 <!-- Change icons for each feature -->
-<i class="fas fa-YOUR_ICON fa-2x text-primary"></i>
+<i class="fas fa-heartbeat fa-2x text-primary"></i>
 ```
 
-**Feature icon suggestions:**
-- `fa-cogs` - Advanced Technology
-- `fa-award` - Premium Quality
-- `fa-headset` - 24/7 Support
-- `fa-shipping-fast` - Free Shipping
-- `fa-shield-alt` - Security
-- `fa-bolt` - Fast Performance
-- `fa-battery-full` - Long Battery Life
-- `fa-wifi` - Connectivity
+**NotADoctor feature suggestions:**
+- `fa-heartbeat` - Vital Monitoring
+- `fa-robot` - NurseAI Assistant
+- `fa-shield-alt` - Medical Grade (High-precision components)
+- `fa-mobile-alt` - Smart Connectivity
+- `fa-thermometer-half` - Temperature Monitoring
+- `fa-heart` - Blood Pressure Monitoring
+- `fa-lungs` - SPO2 Monitoring
+- `fa-brain` - AI-Powered Insights
+- `fa-microchip` - Advanced Sensors
+- `fa-cloud` - Cloud Data Sync
 
 ### 4. Pre-Order Pricing
 
@@ -88,13 +90,13 @@ This guide shows you exactly where and how to add your product content to the si
 
 ```html
 <!-- Line 147: Pre-order price -->
-<div class="text-primary fw-bold">$YOUR_PREORDER_PRICE</div>
+<div class="text-primary fw-bold">$580 CAD</div>
 
 <!-- Line 152: Availability date -->
-<div class="text-warning fw-bold">YOUR_DATE</div>
+<div class="text-warning fw-bold">March 15, 2024</div>
 
 <!-- Line 157: Pre-order end date -->
-<div class="text-danger fw-bold">YOUR_END_DATE</div>
+<div class="text-danger fw-bold">Feb 28, 2024</div>
 ```
 
 ### 5. Pre-Order Form Pricing
@@ -105,11 +107,11 @@ This guide shows you exactly where and how to add your product content to the si
 
 ```html
 <!-- Lines 200-210: Quantity options with pricing -->
-<option value="1">1 - $YOUR_PRICE</option>
-<option value="2">2 - $YOUR_PRICE_X2</option>
-<option value="3">3 - $YOUR_PRICE_X3</option>
-<option value="4">4 - $YOUR_PRICE_X4</option>
-<option value="5">5 - $YOUR_PRICE_X5</option>
+<option value="1">1 - $580 CAD</option>
+<option value="2">2 - $1,160 CAD</option>
+<option value="3">3 - $1,740 CAD</option>
+<option value="4">4 - $2,320 CAD</option>
+<option value="5">5 - $2,900 CAD</option>
 ```
 
 ### 6. Form Button Text
@@ -120,7 +122,7 @@ This guide shows you exactly where and how to add your product content to the si
 
 ```html
 <button type="submit" class="btn btn-warning btn-lg px-5 py-4 fw-bold" style="font-size: 1.2rem;">
-    <i class="fas fa-rocket me-3"></i>Place Pre-Order - $YOUR_PRICE
+    <i class="fas fa-rocket me-3"></i>Place Pre-Order - $580 CAD
 </button>
 ```
 

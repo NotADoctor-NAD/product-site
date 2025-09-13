@@ -1,49 +1,72 @@
 {{ define "main" }}
 <!-- Hero Section -->
 <section class="hero-section position-relative overflow-hidden">
-    <div class="position-absolute w-100 h-100" style="background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 50%, var(--accent-color) 100%); opacity: 0.9;"></div>
-    <div class="position-absolute w-100 h-100" style="background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);"></div>
+    <div class="position-absolute w-100 h-100" style="background: linear-gradient(135deg, var(--dark-bg) 0%, var(--secondary-color) 50%, var(--accent-color) 100%); opacity: 0.9;"></div>
+    <div class="position-absolute w-100 h-100" style="background: radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(107, 114, 128, 0.05) 0%, transparent 50%);"></div>
     
     <div class="container position-relative">
         <div class="row align-items-center min-vh-75">
-            <div class="col-lg-8">
+            <div class="col-lg-6">
                 <div class="mb-4">
                     <span class="badge bg-warning text-dark px-3 py-2 mb-3" style="font-size: 0.9rem;">
                         <i class="fas fa-fire me-2"></i>Limited Time Pre-Order
                     </span>
                 </div>
-                <h1 class="display-3 fw-bold mb-4 text-white" style="text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-                    Premium Product
-                </h1>
+                
+                <!-- Logo in Hero Section -->
+                <div class="mb-4 text-center text-lg-start">
+                    <svg width="500" height="220" viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background -->
+                        <rect width="100%" height="100%" fill="transparent"/>
+                        
+                        <!-- ECG Line - Wider and bigger spikes, moved higher -->
+                        <path d="M200 50 L240 50 L250 10 L260 90 L270 50 L300 50" 
+                              stroke="#10b981" stroke-width="6" fill="none" stroke-linecap="round"/>
+                        
+                        <!-- NotADoctor Text -->
+                        <text x="250" y="160" font-family="Arial, sans-serif" font-size="40" font-weight="bold" 
+                              fill="white" text-anchor="middle">NotADoctor</text>
+                        
+                        <!-- Healthcare For All Text -->
+                        <text x="250" y="190" font-family="Arial, sans-serif" font-size="20" 
+                              fill="#a3a3a3" text-anchor="middle">Healthcare For All</text>
+                    </svg>
+                </div>
+                
                 <p class="lead mb-4 text-white-50" style="font-size: 1.25rem; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">
-                    Our flagship product with cutting-edge features. Pre-order now and save $50!
+                    AI-powered vital monitoring device for healthcare.
                 </p>
                 <div class="d-flex align-items-center gap-4 mb-4">
                     <div class="d-flex align-items-center">
-                        <span class="price-tag me-3" style="font-size: 2rem; padding: 1rem 1.5rem;">$249.99</span>
+                        <span class="price-tag me-3" style="font-size: 2rem; padding: 1rem 1.5rem;">$280 CAD</span>
                         <div class="text-white">
-                            <div class="text-decoration-line-through text-white-50">$299.99</div>
-                            <div class="fw-bold text-warning">Save $50!</div>
+                            <div class="text-decoration-line-through text-white-50">$350 CAD</div>
+                            <div class="fw-bold text-warning">Save $70 CAD!</div>
                         </div>
                     </div>
                 </div>
                 <div class="d-flex gap-3 flex-wrap">
                     <a href="#pre-order-form" class="btn btn-warning btn-lg px-4 py-3 fw-bold">
-                        <i class="fas fa-rocket me-2"></i>Pre-Order Now
+                        <i class="fas fa-rocket me-2"></i>Pre-Order - $280 CAD
                     </a>
                     <a href="#features" class="btn btn-outline-light btn-lg px-4 py-3">
                         <i class="fas fa-info-circle me-2"></i>Learn More
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4 text-center">
+            <div class="col-lg-6 text-center">
                 <div class="position-relative">
-                    <div class="bg-white bg-opacity-15 rounded-circle d-inline-flex align-items-center justify-content-center position-relative" 
-                         style="width: 280px; height: 280px; backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.2);">
-                        <i class="fas fa-gem fa-5x text-white" style="filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));"></i>
+                    <div class="d-inline-flex align-items-center justify-content-center position-relative w-100" 
+                         style="height: 100vh; margin-right: -100px; margin-bottom: -100px;">
+                        <img src="https://raw.githubusercontent.com/NotADoctor-NAD/images/main/image_1.jpg" alt="NotADoctor Device" class="img-fluid" 
+                             style="max-width: 100%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="d-none align-items-center justify-content-center w-100 h-100">
+                            <i class="fas fa-heartbeat fa-5x text-white" style="filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));"></i>
+                        </div>
                     </div>
-                    <div class="position-absolute top-0 start-0 w-100 h-100 rounded-circle" 
-                         style="background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%); animation: pulse 2s infinite;"></div>
+                    <div class="position-absolute top-0 start-0 w-100 h-100 rounded-4" 
+                         style="background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%); animation: pulse 2s infinite;"></div>
                 </div>
             </div>
         </div>
@@ -63,8 +86,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center mb-5">
-                <h2 class="display-5 fw-bold mb-3">Why Choose Our Product?</h2>
-                <p class="lead">Cutting-edge technology meets premium quality</p>
+                <h2 class="display-5 fw-bold mb-3">Why Choose NotADoctor?</h2>
+                <p class="lead">Revolutionary AI-powered healthcare monitoring for everyone</p>
             </div>
         </div>
         
@@ -74,10 +97,10 @@
                     <div class="card-body text-center p-4">
                         <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
                              style="width: 60px; height: 60px;">
-                            <i class="fas fa-cogs fa-2x text-primary"></i>
+                            <i class="fas fa-heartbeat fa-2x text-primary"></i>
                         </div>
-                        <h5 class="card-title fw-bold">Advanced Technology</h5>
-                        <p class="card-text text-muted">State-of-the-art components for optimal performance</p>
+                        <h5 class="card-title fw-bold">Vital Monitoring</h5>
+                        <p class="card-text text-muted">Continuous monitoring of temperature, blood pressure, and SPO2</p>
                     </div>
                 </div>
             </div>
@@ -87,10 +110,10 @@
                     <div class="card-body text-center p-4">
                         <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
                              style="width: 60px; height: 60px;">
-                            <i class="fas fa-award fa-2x text-success"></i>
+                            <i class="fas fa-robot fa-2x text-success"></i>
                         </div>
-                        <h5 class="card-title fw-bold">Premium Quality</h5>
-                        <p class="card-text text-muted">Crafted with the finest materials for lasting durability</p>
+                        <h5 class="card-title fw-bold">NurseAI Assistant</h5>
+                        <p class="card-text text-muted">Intelligent AI companion for personalized health insights</p>
                     </div>
                 </div>
             </div>
@@ -100,10 +123,10 @@
                     <div class="card-body text-center p-4">
                         <div class="bg-warning bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
                              style="width: 60px; height: 60px;">
-                            <i class="fas fa-headset fa-2x text-warning"></i>
+                            <i class="fas fa-shield-alt fa-2x text-warning"></i>
                         </div>
-                        <h5 class="card-title fw-bold">24/7 Support</h5>
-                        <p class="card-text text-muted">Round-the-clock customer service and technical support</p>
+                        <h5 class="card-title fw-bold">Medical Grade</h5>
+                        <p class="card-text text-muted">High-precision components with clinical accuracy standards</p>
                     </div>
                 </div>
             </div>
@@ -113,10 +136,10 @@
                     <div class="card-body text-center p-4">
                         <div class="bg-info bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
                              style="width: 60px; height: 60px;">
-                            <i class="fas fa-shipping-fast fa-2x text-info"></i>
+                            <i class="fas fa-mobile-alt fa-2x text-info"></i>
                         </div>
-                        <h5 class="card-title fw-bold">Free Shipping</h5>
-                        <p class="card-text text-muted">Complimentary shipping on all pre-orders</p>
+                        <h5 class="card-title fw-bold">Smart Connectivity</h5>
+                        <p class="card-text text-muted">Seamless integration with mobile apps and health platforms</p>
                     </div>
                 </div>
             </div>
@@ -126,7 +149,7 @@
 
 <!-- Pre-Order CTA Section -->
 <section class="py-5 position-relative" style="background: linear-gradient(135deg, var(--light-bg) 0%, var(--dark-bg) 100%);">
-    <div class="position-absolute w-100 h-100" style="background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.05) 0%, transparent 20%), radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.03) 0%, transparent 20%);"></div>
+    <div class="position-absolute w-100 h-100" style="background: radial-gradient(circle at 10% 10%, rgba(107, 114, 128, 0.05) 0%, transparent 20%), radial-gradient(circle at 90% 90%, rgba(107, 114, 128, 0.03) 0%, transparent 20%);"></div>
     
     <div class="container position-relative">
         <div class="row">
@@ -137,12 +160,12 @@
                     </span>
                 </div>
                 <h2 class="display-4 fw-bold mb-4">Ready to Pre-Order?</h2>
-                <p class="lead mb-4" style="font-size: 1.25rem;">Join the exclusive group of early adopters and save $50!</p>
+                <p class="lead mb-4" style="font-size: 1.25rem;">Join the exclusive group of early adopters and save $145 CAD!</p>
                 
                 <div class="row g-4 mb-5">
                     <div class="col-md-4">
-                        <div class="text-center p-4 rounded" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2);">
-                            <div class="text-primary fw-bold">$249.99</div>
+                        <div class="text-center p-4 rounded" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2);">
+                            <div class="text-primary fw-bold">$280 CAD</div>
                             <small class="text-muted">Pre-Order Price</small>
                         </div>
                     </div>
@@ -161,7 +184,7 @@
                 </div>
                 
                 <a href="#pre-order-form" class="btn btn-warning btn-lg px-5 py-4 fw-bold" style="font-size: 1.2rem;">
-                    <i class="fas fa-rocket me-3"></i>Pre-Order Now - Save $50
+                    <i class="fas fa-rocket me-3"></i>Pre-Order Now - Save $145 CAD
                 </a>
             </div>
         </div>
@@ -170,7 +193,7 @@
 
 <!-- Pre-Order Form Section -->
 <section id="pre-order-form" class="py-5 position-relative" style="background: linear-gradient(135deg, var(--light-bg) 0%, var(--dark-bg) 100%);">
-    <div class="position-absolute w-100 h-100" style="background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.05) 0%, transparent 20%), radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.03) 0%, transparent 20%);"></div>
+    <div class="position-absolute w-100 h-100" style="background: radial-gradient(circle at 10% 10%, rgba(107, 114, 128, 0.05) 0%, transparent 20%), radial-gradient(circle at 90% 90%, rgba(107, 114, 128, 0.03) 0%, transparent 20%);"></div>
     
     <div class="container position-relative">
         <div class="row">
@@ -181,7 +204,7 @@
                     </span>
                 </div>
                 <h2 class="display-4 fw-bold mb-4">🚀 Place Your Pre-Order</h2>
-                <p class="lead mb-0" style="font-size: 1.25rem;">Fill out the form below to secure your pre-order and save $50!</p>
+                <p class="lead mb-0" style="font-size: 1.25rem;">Fill out the form below to secure your NotADoctor pre-order and save $145 CAD!</p>
             </div>
         </div>
         
@@ -239,24 +262,24 @@
                                     </label>
                                     <select class="form-control form-control-lg" id="quantity" name="quantity" required>
                                         <option value="">Select quantity</option>
-                                        <option value="1">1 - $249.99</option>
-                                        <option value="2">2 - $499.98</option>
-                                        <option value="3">3 - $749.97</option>
-                                        <option value="4">4 - $999.96</option>
-                                        <option value="5">5 - $1,249.95</option>
+                                        <option value="1">1 - $580 CAD</option>
+                                        <option value="2">2 - $1,160 CAD</option>
+                                        <option value="3">3 - $1,740 CAD</option>
+                                        <option value="4">4 - $2,320 CAD</option>
+                                        <option value="5">5 - $2,900 CAD</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="color" class="form-label fw-bold">
-                                        <i class="fas fa-palette text-primary me-2"></i>Color Preference
+                                        <i class="fas fa-cog text-primary me-2"></i>Model Preference
                                     </label>
                                     <select class="form-control form-control-lg" id="color" name="color">
-                                        <option value="">Select color</option>
-                                        <option value="silver">Silver</option>
-                                        <option value="black">Black</option>
-                                        <option value="gold">Gold</option>
+                                        <option value="">Select model</option>
+                                        <option value="standard">Standard Model</option>
+                                        <option value="professional">Professional Model</option>
+                                        <option value="enterprise">Enterprise Model</option>
                                     </select>
                                 </div>
                             </div>
@@ -269,7 +292,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="form-check p-4 rounded" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2);">
+                                <div class="form-check p-4 rounded" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2);">
                                     <input class="form-check-input" type="checkbox" id="agreeTerms" required>
                                     <label class="form-check-label fw-bold" for="agreeTerms">
                                         I agree to the <a href="#" class="text-primary">pre-order terms and conditions</a> *
@@ -279,7 +302,7 @@
                             <div class="col-12">
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-warning btn-lg px-5 py-4 fw-bold" style="font-size: 1.2rem;">
-                                        <i class="fas fa-rocket me-3"></i>Place Pre-Order - $249.99
+                                        <i class="fas fa-rocket me-3"></i>Place Pre-Order - $580 CAD
                                     </button>
                                     <p class="text-muted mt-3">
                                         <i class="fas fa-shield-alt me-2"></i>* No payment required now. You'll be contacted for payment details.
@@ -299,8 +322,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center mb-5">
-                <h2 class="display-5 fw-bold mb-3">Questions About Pre-Ordering?</h2>
-                <p class="lead">Our team is here to help with any questions about our product or the pre-order process.</p>
+                <h2 class="display-5 fw-bold mb-3">Questions About NotADoctor?</h2>
+                <p class="lead">Our medical technology team is here to help with any questions about our intelligent nursing device or the pre-order process.</p>
             </div>
         </div>
         
@@ -314,21 +337,21 @@
                     
                     <div class="mb-4">
                         <h6><i class="fas fa-envelope text-primary me-2"></i>Email</h6>
-                        <a href="mailto:sales@company.com" class="text-decoration-none">
-                            sales@company.com
+                        <a href="mailto:sales@notadoctor.com" class="text-decoration-none">
+                            sales@notadoctor.com
                         </a>
                     </div>
                     
                     <div class="mb-4">
                         <h6><i class="fas fa-phone text-primary me-2"></i>Phone</h6>
                         <a href="tel:+15551234567" class="text-decoration-none">
-                            +1 (555) 123-4567
+                            +1 (555) HEALTH-1
                         </a>
                     </div>
                     
                     <div class="mb-4">
                         <h6><i class="fas fa-map-marker-alt text-primary me-2"></i>Address</h6>
-                        <p class="mb-0">123 Business St, City, State 12345</p>
+                        <p class="mb-0">123 Medical Innovation Dr, Healthcare City, HC 12345</p>
                     </div>
                     
                     <div class="mb-4">
@@ -365,11 +388,11 @@
                             </div>
                             <div class="col-12">
                                 <label for="contactSubject" class="form-label">Subject</label>
-                                <input type="text" class="form-control" id="contactSubject" name="subject" value="Product Question" required>
+                                <input type="text" class="form-control" id="contactSubject" name="subject" value="NotADoctor Question" required>
                             </div>
                             <div class="col-12">
                                 <label for="contactMessage" class="form-label">Message</label>
-                                <textarea class="form-control" id="contactMessage" name="message" rows="5" placeholder="Ask us anything about our product or pre-order process..." required></textarea>
+                                <textarea class="form-control" id="contactMessage" name="message" rows="5" placeholder="Ask us anything about NotADoctor, NurseAI, or our pre-order process..." required></textarea>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary btn-lg">

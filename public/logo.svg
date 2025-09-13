@@ -1,0 +1,45 @@
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#374151;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="200" height="80" fill="url(#bgGradient)" rx="8"/>
+  
+  <!-- ECG Heartbeat Line -->
+  <path d="M20 25 L25 25 L27 20 L30 30 L33 15 L36 35 L39 25 L44 25" 
+        stroke="white" 
+        stroke-width="2" 
+        fill="none" 
+        filter="url(#glow)"
+        style="filter: drop-shadow(0 0 8px #10b981);"/>
+  
+  <!-- Product Name -->
+  <text x="100" y="35" 
+        font-family="Arial, sans-serif" 
+        font-size="18" 
+        font-weight="bold" 
+        fill="white" 
+        text-anchor="middle"
+        filter="url(#glow)"
+        style="filter: drop-shadow(0 0 8px white);">NotADoctor</text>
+  
+  <!-- Tagline -->
+  <text x="100" y="55" 
+        font-family="Arial, sans-serif" 
+        font-size="12" 
+        fill="white" 
+        text-anchor="middle"
+        filter="url(#glow)"
+        style="filter: drop-shadow(0 0 6px white);">Healthcare For All</text>
+</svg>
