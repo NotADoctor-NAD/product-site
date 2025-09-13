@@ -1,0 +1,305 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold mb-3">{{ .Title }}</h1>
+                <p class="lead mb-4">{{ .Description }}</p>
+                <div class="d-flex align-items-center gap-3">
+                    <span class="price-tag">{{ .Params.price }}</span>
+                    <a href="#contact" class="btn btn-light btn-lg">
+                        <i class="fas fa-phone me-2"></i>Contact Us
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <div class="bg-white bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 200px; height: 200px;">
+                    <i class="fas fa-cube fa-4x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="content">
+                    {{ .Content }}
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <!-- Features Sidebar -->
+                <div class="card feature-card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-star text-warning me-2"></i>Key Features
+                        </h5>
+                        <ul class="list-unstyled">
+                            {{ range .Params.features }}
+                            <li class="mb-2">
+                                <i class="fas fa-check text-success me-2"></i>{{ . }}
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Quick Info -->
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-info-circle text-primary me-2"></i>Quick Info
+                        </h5>
+                        {{ if .Params.pre_order }}
+                        <div class="mb-3">
+                            <strong>Pre-Order Price:</strong><br>
+                            <span class="price-tag">{{ .Params.pre_order_price }}</span>
+                            <small class="text-muted d-block">Regular: {{ .Params.price }}</small>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Availability:</strong><br>
+                            <span class="text-warning">Pre-Order</span>
+                            <small class="text-muted d-block">Available: {{ .Params.availability_date }}</small>
+                        </div>
+                        <a href="#pre-order-form" class="btn btn-primary w-100 mb-2">
+                            <i class="fas fa-shopping-cart me-2"></i>Pre-Order Now
+                        </a>
+                        <a href="#contact" class="btn btn-outline-primary w-100">
+                            <i class="fas fa-envelope me-2"></i>Ask Questions
+                        </a>
+                        {{ else }}
+                        <div class="mb-3">
+                            <strong>Price:</strong><br>
+                            <span class="price-tag">{{ .Params.price }}</span>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Availability:</strong><br>
+                            <span class="text-success">In Stock</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary w-100">
+                            <i class="fas fa-envelope me-2"></i>Get Quote
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pre-Order Section -->
+{{ if .Params.pre_order }}
+<section id="pre-order-form" class="py-5" style="background-color: var(--light-bg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">🚀 Pre-Order Your Premium Product</h2>
+                <p class="lead">Secure your spot and save $50 with our limited-time pre-order offer!</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Pre-Order Benefits -->
+            <div class="col-lg-4">
+                <div class="contact-card h-100">
+                    <h4 class="mb-4">
+                        <i class="fas fa-gift text-primary me-2"></i>Pre-Order Benefits
+                    </h4>
+                    
+                    <ul class="list-unstyled">
+                        {{ range .Params.pre_order_benefits }}
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>{{ . }}
+                        </li>
+                        {{ end }}
+                    </ul>
+                    
+                    <div class="mt-4 p-3" style="background-color: var(--dark-bg); border-radius: 8px;">
+                        <h6 class="text-warning mb-2">Limited Time Offer</h6>
+                        <p class="mb-0 small">Pre-order ends February 28, 2024</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pre-Order Form -->
+            <div class="col-lg-8">
+                <div class="contact-card h-100">
+                    <h4 class="mb-4">
+                        <i class="fas fa-shopping-cart text-primary me-2"></i>Pre-Order Form
+                    </h4>
+                    
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone *</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="quantity" class="form-label">Quantity *</label>
+                                <select class="form-control" id="quantity" required>
+                                    <option value="">Select quantity</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="color" class="form-label">Color Preference</label>
+                                <select class="form-control" id="color">
+                                    <option value="">Select color</option>
+                                    <option value="silver">Silver</option>
+                                    <option value="black">Black</option>
+                                    <option value="gold">Gold</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="specialRequests" class="form-label">Special Requests</label>
+                                <textarea class="form-control" id="specialRequests" rows="3" placeholder="Any special requests or notes..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                    <label class="form-check-label" for="agreeTerms">
+                                        I agree to the <a href="#" class="text-primary">pre-order terms and conditions</a> *
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <i class="fas fa-shopping-cart me-2"></i>Place Pre-Order - {{ .Params.pre_order_price }}
+                                </button>
+                                <p class="text-muted small mt-2">* No payment required now. You'll be contacted for payment details.</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Get in Touch</h2>
+                <p class="lead">Ready to learn more about our product? Contact our team today!</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Contact Information -->
+            <div class="col-lg-4">
+                <div class="contact-card h-100">
+                    <h4 class="mb-4">
+                        <i class="fas fa-address-card text-primary me-2"></i>Contact Info
+                    </h4>
+                    
+                    <div class="mb-4">
+                        <h6><i class="fas fa-envelope text-primary me-2"></i>Email</h6>
+                        <a href="mailto:{{ .Params.contact.email }}" class="text-decoration-none">
+                            {{ .Params.contact.email }}
+                        </a>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6><i class="fas fa-phone text-primary me-2"></i>Phone</h6>
+                        <a href="tel:{{ .Params.contact.phone }}" class="text-decoration-none">
+                            {{ .Params.contact.phone }}
+                        </a>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6><i class="fas fa-map-marker-alt text-primary me-2"></i>Address</h6>
+                        <p class="mb-0">{{ .Params.contact.address }}</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6><i class="fas fa-clock text-primary me-2"></i>Business Hours</h6>
+                        <p class="mb-0">{{ .Params.contact.hours }}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="col-lg-8">
+                <div class="contact-card h-100">
+                    <h4 class="mb-4">
+                        <i class="fas fa-paper-plane text-primary me-2"></i>Send us a Message
+                    </h4>
+                    
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="phone">
+                            </div>
+                            <div class="col-12">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" value="Inquiry about {{ .Title }}" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Tell us about your needs..." required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h3 class="mb-3">Ready to Get Started?</h3>
+        <p class="lead mb-4">Don't wait! Contact our team today to learn more about our premium product.</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="tel:{{ .Params.contact.phone }}" class="btn btn-light btn-lg">
+                <i class="fas fa-phone me-2"></i>Call Now
+            </a>
+            <a href="mailto:{{ .Params.contact.email }}" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-envelope me-2"></i>Email Us
+            </a>
+        </div>
+    </div>
+</section>
+{{ end }}

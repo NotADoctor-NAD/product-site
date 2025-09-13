@@ -1,0 +1,24 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 fw-bold mb-3">{{ .Title }}</h1>
+                <p class="lead mb-4">{{ .Description }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

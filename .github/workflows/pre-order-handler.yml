@@ -1,0 +1,208 @@
+name: Handle Pre-Order Form Submissions
+
+on:
+  repository_dispatch:
+    types: [pre-order-submission, contact-submission]
+
+jobs:
+  create-pre-order-pr:
+    if: github.event.action == 'pre-order-submission'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Pre-Order Branch
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # Create branch name with timestamp
+          BRANCH_NAME="pre-order-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b $BRANCH_NAME
+          
+          # Create pre-order file
+          mkdir -p pre-orders
+          cat > "pre-orders/$(date +%Y%m%d-%H%M%S).md" << EOF
+          ---
+          title: "Pre-Order Submission"
+          date: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          status: "pending"
+          customer:
+            firstName: "${{ github.event.client_payload.firstName }}"
+            lastName: "${{ github.event.client_payload.lastName }}"
+            email: "${{ github.event.client_payload.email }}"
+            phone: "${{ github.event.client_payload.phone }}"
+          order:
+            quantity: ${{ github.event.client_payload.quantity }}
+            color: "${{ github.event.client_payload.color }}"
+            specialRequests: "${{ github.event.client_payload.specialRequests }}"
+            totalPrice: "${{ github.event.client_payload.totalPrice }}"
+          ---
+          
+          # Pre-Order Submission
+          
+          **Customer Information:**
+          - **Name:** ${{ github.event.client_payload.firstName }} ${{ github.event.client_payload.lastName }}
+          - **Email:** ${{ github.event.client_payload.email }}
+          - **Phone:** ${{ github.event.client_payload.phone }}
+          
+          **Order Details:**
+          - **Quantity:** ${{ github.event.client_payload.quantity }}
+          - **Color Preference:** ${{ github.event.client_payload.color }}
+          - **Special Requests:** ${{ github.event.client_payload.specialRequests }}
+          - **Total Price:** ${{ github.event.client_payload.totalPrice }}
+          
+          **Submission Time:** $(date -u)
+          
+          ---
+          
+          ## Status: Pending Review
+          
+          - [ ] Review customer information
+          - [ ] Verify order details
+          - [ ] Contact customer if needed
+          - [ ] Process pre-order
+          - [ ] Update status to "approved" or "rejected"
+          EOF
+          
+          # Commit and push
+          git add .
+          git commit -m "Add pre-order submission from ${{ github.event.client_payload.firstName }} ${{ github.event.client_payload.lastName }}"
+          git push origin $BRANCH_NAME
+          
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ env.BRANCH_NAME }}
+          title: "🚀 Pre-Order: ${{ github.event.client_payload.firstName }} ${{ github.event.client_payload.lastName }}"
+          body: |
+            ## New Pre-Order Submission
+            
+            **Customer:** ${{ github.event.client_payload.firstName }} ${{ github.event.client_payload.lastName }}
+            **Email:** ${{ github.event.client_payload.email }}
+            **Phone:** ${{ github.event.client_payload.phone }}
+            
+            **Order Details:**
+            - Quantity: ${{ github.event.client_payload.quantity }}
+            - Color: ${{ github.event.client_payload.color }}
+            - Special Requests: ${{ github.event.client_payload.specialRequests }}
+            - Total: ${{ github.event.client_payload.totalPrice }}
+            
+            **Status:** Pending Review
+            
+            ---
+            
+            ### Review Checklist
+            - [ ] Customer information verified
+            - [ ] Order details confirmed
+            - [ ] Contact customer if needed
+            - [ ] Ready to process
+            
+            ### Actions
+            - Approve and merge to process the order
+            - Comment with any questions
+            - Close PR to reject the order
+          labels: pre-order, pending-review
+          assignees: ${{ github.repository_owner }}
+
+  create-contact-pr:
+    if: github.event.action == 'contact-submission'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Contact Branch
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # Create branch name with timestamp
+          BRANCH_NAME="contact-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b $BRANCH_NAME
+          
+          # Create contact file
+          mkdir -p contact-inquiries
+          cat > "contact-inquiries/$(date +%Y%m%d-%H%M%S).md" << EOF
+          ---
+          title: "Contact Inquiry"
+          date: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          status: "pending"
+          customer:
+            firstName: "${{ github.event.client_payload.firstName }}"
+            lastName: "${{ github.event.client_payload.lastName }}"
+            email: "${{ github.event.client_payload.email }}"
+            phone: "${{ github.event.client_payload.phone }}"
+          inquiry:
+            subject: "${{ github.event.client_payload.subject }}"
+            message: "${{ github.event.client_payload.message }}"
+          ---
+          
+          # Contact Inquiry
+          
+          **Customer Information:**
+          - **Name:** ${{ github.event.client_payload.firstName }} ${{ github.event.client_payload.lastName }}
+          - **Email:** ${{ github.event.client_payload.email }}
+          - **Phone:** ${{ github.event.client_payload.phone }}
+          
+          **Inquiry Details:**
+          - **Subject:** ${{ github.event.client_payload.subject }}
+          - **Message:** ${{ github.event.client_payload.message }}
+          
+          **Submission Time:** $(date -u)
+          
+          ---
+          
+          ## Status: Pending Response
+          
+          - [ ] Review inquiry
+          - [ ] Respond to customer
+          - [ ] Update status to "responded"
+          EOF
+          
+          # Commit and push
+          git add .
+          git commit -m "Add contact inquiry from ${{ github.event.client_payload.firstName }} ${{ github.event.client_payload.lastName }}"
+          git push origin $BRANCH_NAME
+          
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ env.BRANCH_NAME }}
+          title: "📧 Contact: ${{ github.event.client_payload.subject }}"
+          body: |
+            ## New Contact Inquiry
+            
+            **Customer:** ${{ github.event.client_payload.firstName }} ${{ github.event.client_payload.lastName }}
+            **Email:** ${{ github.event.client_payload.email }}
+            **Phone:** ${{ github.event.client_payload.phone }}
+            
+            **Inquiry:**
+            - Subject: ${{ github.event.client_payload.subject }}
+            - Message: ${{ github.event.client_payload.message }}
+            
+            **Status:** Pending Response
+            
+            ---
+            
+            ### Response Checklist
+            - [ ] Review inquiry
+            - [ ] Respond to customer
+            - [ ] Update status to "responded"
+            
+            ### Actions
+            - Comment with response details
+            - Merge when inquiry is handled
+          labels: contact, pending-response
+          assignees: ${{ github.repository_owner }}

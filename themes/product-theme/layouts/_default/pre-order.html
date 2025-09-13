@@ -1,0 +1,392 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="hero-section position-relative overflow-hidden">
+    <div class="position-absolute w-100 h-100" style="background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 50%, var(--accent-color) 100%); opacity: 0.9;"></div>
+    <div class="position-absolute w-100 h-100" style="background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);"></div>
+    
+    <div class="container position-relative">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-8">
+                <div class="mb-4">
+                    <span class="badge bg-warning text-dark px-3 py-2 mb-3" style="font-size: 0.9rem;">
+                        <i class="fas fa-fire me-2"></i>Limited Time Offer
+                    </span>
+                </div>
+                <h1 class="display-3 fw-bold mb-4 text-white" style="text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                    {{ .Title }}
+                </h1>
+                <p class="lead mb-4 text-white-50" style="font-size: 1.25rem; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">
+                    {{ .Description }}
+                </p>
+                <div class="d-flex align-items-center gap-4 mb-4">
+                    <div class="d-flex align-items-center">
+                        <span class="price-tag me-3" style="font-size: 2rem; padding: 1rem 1.5rem;">$249.99</span>
+                        <div class="text-white">
+                            <div class="text-decoration-line-through text-white-50">$299.99</div>
+                            <div class="fw-bold text-warning">Save $50!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="#pre-order-form" class="btn btn-warning btn-lg px-4 py-3 fw-bold">
+                        <i class="fas fa-rocket me-2"></i>Pre-Order Now
+                    </a>
+                    <a href="#benefits" class="btn btn-outline-light btn-lg px-4 py-3">
+                        <i class="fas fa-gift me-2"></i>See Benefits
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <div class="position-relative">
+                    <div class="bg-white bg-opacity-15 rounded-circle d-inline-flex align-items-center justify-content-center position-relative" 
+                         style="width: 280px; height: 280px; backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.2);">
+                        <i class="fas fa-rocket fa-5x text-white" style="filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));"></i>
+                    </div>
+                    <div class="position-absolute top-0 start-0 w-100 h-100 rounded-circle" 
+                         style="background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%); animation: pulse 2s infinite;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating elements -->
+    <div class="position-absolute" style="top: 20%; left: 10%; opacity: 0.1;">
+        <i class="fas fa-star fa-2x text-warning"></i>
+    </div>
+    <div class="position-absolute" style="top: 60%; right: 15%; opacity: 0.1;">
+        <i class="fas fa-gem fa-2x text-accent"></i>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="py-5" id="benefits">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="content">
+                    {{ .Content }}
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <!-- Pre-Order Summary -->
+                <div class="card feature-card mb-4 border-0" style="background: linear-gradient(135deg, var(--card-bg), var(--dark-bg));">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-4">
+                            <div class="bg-warning bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                                 style="width: 60px; height: 60px;">
+                                <i class="fas fa-shopping-cart fa-2x text-warning"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Pre-Order Summary</h5>
+                        </div>
+                        
+                        <div class="mb-4 p-3 rounded" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2);">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="text-muted">Pre-Order Price:</span>
+                                <span class="price-tag" style="font-size: 1.1rem; padding: 0.5rem 1rem;">$249.99</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted">Regular Price:</span>
+                                <span class="text-decoration-line-through text-muted">$299.99</span>
+                            </div>
+                        </div>
+                        
+                        <div class="row g-3 mb-4">
+                            <div class="col-6">
+                                <div class="text-center p-3 rounded" style="background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.2);">
+                                    <div class="text-warning fw-bold">March 15, 2024</div>
+                                    <small class="text-muted">Available</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-center p-3 rounded" style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2);">
+                                    <div class="text-danger fw-bold">Feb 28, 2024</div>
+                                    <small class="text-muted">Ends</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#pre-order-form" class="btn btn-warning w-100 fw-bold py-3">
+                            <i class="fas fa-rocket me-2"></i>Pre-Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Benefits -->
+                <div class="card feature-card border-0" style="background: linear-gradient(135deg, var(--card-bg), var(--dark-bg));">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-4">
+                            <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                                 style="width: 60px; height: 60px;">
+                                <i class="fas fa-gift fa-2x text-success"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Pre-Order Benefits</h5>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="d-flex align-items-center p-3 rounded" style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2);">
+                                <div class="bg-success rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                     style="width: 32px; height: 32px;">
+                                    <i class="fas fa-check text-white fa-sm"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Early Access</div>
+                                    <small class="text-muted">Get it first</small>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center p-3 rounded" style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2);">
+                                <div class="bg-success rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                     style="width: 32px; height: 32px;">
+                                    <i class="fas fa-check text-white fa-sm"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Save $50</div>
+                                    <small class="text-muted">Special pricing</small>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center p-3 rounded" style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2);">
+                                <div class="bg-success rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                     style="width: 32px; height: 32px;">
+                                    <i class="fas fa-check text-white fa-sm"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Priority Shipping</div>
+                                    <small class="text-muted">First in line</small>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center p-3 rounded" style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2);">
+                                <div class="bg-success rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                     style="width: 32px; height: 32px;">
+                                    <i class="fas fa-check text-white fa-sm"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Exclusive Bonus</div>
+                                    <small class="text-muted">Limited edition</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pre-Order Form Section -->
+<section id="pre-order-form" class="py-5 position-relative" style="background: linear-gradient(135deg, var(--light-bg) 0%, var(--dark-bg) 100%);">
+    <div class="position-absolute w-100 h-100" style="background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.05) 0%, transparent 20%), radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.03) 0%, transparent 20%);"></div>
+    
+    <div class="container position-relative">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center mb-5">
+                <div class="mb-4">
+                    <span class="badge bg-warning text-dark px-4 py-2 mb-3" style="font-size: 1rem;">
+                        <i class="fas fa-clock me-2"></i>Limited Time Offer
+                    </span>
+                </div>
+                <h2 class="display-4 fw-bold mb-4">🚀 Place Your Pre-Order</h2>
+                <p class="lead mb-0" style="font-size: 1.25rem;">Fill out the form below to secure your pre-order and save $50!</p>
+            </div>
+        </div>
+        
+        <div class="row g-5">
+            <!-- Pre-Order Form -->
+            <div class="col-lg-8 mx-auto">
+                <div class="contact-card border-0" style="background: linear-gradient(135deg, var(--card-bg), var(--dark-bg)); backdrop-filter: blur(10px);">
+                    <div class="text-center mb-5">
+                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px;">
+                            <i class="fas fa-shopping-cart fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="fw-bold">Pre-Order Form</h3>
+                        <p class="text-muted">Complete your pre-order in just a few steps</p>
+                    </div>
+                    
+                    <form action="/webhook/pre-order" method="POST" id="pre-order-form">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label fw-bold">
+                                        <i class="fas fa-user text-primary me-2"></i>First Name *
+                                    </label>
+                                    <input type="text" class="form-control form-control-lg" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label fw-bold">
+                                        <i class="fas fa-user text-primary me-2"></i>Last Name *
+                                    </label>
+                                    <input type="text" class="form-control form-control-lg" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email" class="form-label fw-bold">
+                                        <i class="fas fa-envelope text-primary me-2"></i>Email *
+                                    </label>
+                                    <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="your.email@example.com" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="phone" class="form-label fw-bold">
+                                        <i class="fas fa-phone text-primary me-2"></i>Phone *
+                                    </label>
+                                    <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="+1 (555) 123-4567" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="quantity" class="form-label fw-bold">
+                                        <i class="fas fa-sort-numeric-up text-primary me-2"></i>Quantity *
+                                    </label>
+                                    <select class="form-control form-control-lg" id="quantity" name="quantity" required>
+                                        <option value="">Select quantity</option>
+                                        <option value="1">1 - $249.99</option>
+                                        <option value="2">2 - $499.98</option>
+                                        <option value="3">3 - $749.97</option>
+                                        <option value="4">4 - $999.96</option>
+                                        <option value="5">5 - $1,249.95</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="color" class="form-label fw-bold">
+                                        <i class="fas fa-palette text-primary me-2"></i>Color Preference
+                                    </label>
+                                    <select class="form-control form-control-lg" id="color" name="color">
+                                        <option value="">Select color</option>
+                                        <option value="silver">Silver</option>
+                                        <option value="black">Black</option>
+                                        <option value="gold">Gold</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="specialRequests" class="form-label fw-bold">
+                                        <i class="fas fa-comment text-primary me-2"></i>Special Requests
+                                    </label>
+                                    <textarea class="form-control" id="specialRequests" name="specialRequests" rows="4" placeholder="Any special requests, notes, or questions..."></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check p-4 rounded" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2);">
+                                    <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                    <label class="form-check-label fw-bold" for="agreeTerms">
+                                        I agree to the <a href="#" class="text-primary">pre-order terms and conditions</a> *
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-warning btn-lg px-5 py-4 fw-bold" style="font-size: 1.2rem;">
+                                        <i class="fas fa-rocket me-3"></i>Place Pre-Order - $249.99
+                                    </button>
+                                    <p class="text-muted mt-3">
+                                        <i class="fas fa-shield-alt me-2"></i>* No payment required now. You'll be contacted for payment details.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Questions About Pre-Ordering?</h2>
+                <p class="lead">Our team is here to help with any questions about the pre-order process.</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Contact Information -->
+            <div class="col-lg-4">
+                <div class="contact-card h-100">
+                    <h4 class="mb-4">
+                        <i class="fas fa-address-card text-primary me-2"></i>Contact Info
+                    </h4>
+                    
+                    <div class="mb-4">
+                        <h6><i class="fas fa-envelope text-primary me-2"></i>Email</h6>
+                        <a href="mailto:sales@company.com" class="text-decoration-none">
+                            sales@company.com
+                        </a>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6><i class="fas fa-phone text-primary me-2"></i>Phone</h6>
+                        <a href="tel:+15551234567" class="text-decoration-none">
+                            +1 (555) 123-4567
+                        </a>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6><i class="fas fa-map-marker-alt text-primary me-2"></i>Address</h6>
+                        <p class="mb-0">123 Business St, City, State 12345</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6><i class="fas fa-clock text-primary me-2"></i>Business Hours</h6>
+                        <p class="mb-0">Mon-Fri: 9AM-6PM EST</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="col-lg-8">
+                <div class="contact-card h-100">
+                    <h4 class="mb-4">
+                        <i class="fas fa-paper-plane text-primary me-2"></i>Send us a Message
+                    </h4>
+                    
+                    <form action="/webhook/contact" method="POST" id="contact-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="contactFirstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="contactFirstName" name="firstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="contactLastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="contactLastName" name="lastName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="contactEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="contactEmail" name="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="contactPhone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="contactPhone" name="phone">
+                            </div>
+                            <div class="col-12">
+                                <label for="contactSubject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="contactSubject" name="subject" value="Pre-Order Question" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="contactMessage" class="form-label">Message</label>
+                                <textarea class="form-control" id="contactMessage" name="message" rows="5" placeholder="Ask us anything about the pre-order process..." required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

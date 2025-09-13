@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Product - Pre-Order Now Available! | Product Site</title>
+    <meta name="description" content="Pre-order our flagship product and save $50 with exclusive early access">
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #1e3a8a;
+            --accent-color: #3b82f6;
+            --text-color: #f8fafc;
+            --text-muted: #cbd5e1;
+            --light-bg: #1e293b;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --border-color: #334155;
+            --body-bg: #0f172a;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--body-bg);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--dark-bg), var(--primary-color));
+            color: white;
+            padding: 4rem 0;
+        }
+        
+        .feature-card {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-section {
+            background-color: var(--dark-bg);
+            padding: 3rem 0;
+            color: white;
+        }
+        
+        .contact-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .price-tag {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        
+        .navbar-brand {
+            color: var(--accent-color) !important;
+        }
+        
+        .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        
+        .feature-card {
+            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+        }
+        
+        .text-primary {
+            color: var(--accent-color) !important;
+        }
+        
+        .btn-outline-light:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        
+         
+        .form-control {
+            background-color: var(--dark-bg);
+            border-color: var(--border-color);
+            color: var(--text-color);
+        }
+        
+        .form-control:focus {
+            background-color: var(--dark-bg);
+            border-color: var(--accent-color);
+            color: var(--text-color);
+            box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+        }
+        
+        .form-control::placeholder {
+            color: var(--text-muted);
+        }
+        
+         
+        .text-muted {
+            color: var(--text-muted) !important;
+        }
+        
+         
+        .bg-light {
+            background-color: var(--light-bg) !important;
+            color: var(--text-color);
+        }
+        
+         
+        a {
+            color: var(--accent-color);
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+        
+         
+        .card-body {
+            color: var(--text-color);
+        }
+        
+         
+        li {
+            color: var(--text-color);
+        }
+        
+         
+        .text-warning {
+            color: #fbbf24 !important;
+        }
+        
+        .form-check-input {
+            background-color: var(--dark-bg);
+            border-color: var(--border-color);
+        }
+        
+        .form-check-input:checked {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        
+        .form-check-label {
+            color: var(--text-color);
+        }
+        
+        .btn-outline-primary {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+        }
+        
+         
+        .min-vh-75 {
+            min-height: 75vh;
+        }
+        
+        .space-y-3 > * + * {
+            margin-top: 1rem;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.6;
+            }
+        }
+        
+        .btn-warning {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            border: none;
+            color: #1f2937;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-warning:hover {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+            color: #1f2937;
+        }
+        
+        .contact-card {
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-control {
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        .price-tag {
+            transition: all 0.3s ease;
+        }
+        
+        .price-tag:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background-color: var(--dark-bg);">
+        <div class="container">
+            <a class="navbar-brand" href="http://localhost:1313/">
+                <i class="fas fa-cube me-2"></i>Product Site
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:1313/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pre-order-form">Pre-Order Now</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main>
+        
+
+<section class="hero-section position-relative overflow-hidden">
+    <div class="position-absolute w-100 h-100" style="background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 50%, var(--accent-color) 100%); opacity: 0.9;"></div>
+    <div class="position-absolute w-100 h-100" style="background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);"></div>
+    
+    <div class="container position-relative">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-8">
+                <div class="mb-4">
+                    <span class="badge bg-warning text-dark px-3 py-2 mb-3" style="font-size: 0.9rem;">
+                        <i class="fas fa-fire me-2"></i>Limited Time Offer
+                    </span>
+                </div>
+                <h1 class="display-3 fw-bold mb-4 text-white" style="text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                    Premium Product - Pre-Order Now Available!
+                </h1>
+                <p class="lead mb-4 text-white-50" style="font-size: 1.25rem; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">
+                    Pre-order our flagship product and save $50 with exclusive early access
+                </p>
+                <div class="d-flex align-items-center gap-4 mb-4">
+                    <div class="d-flex align-items-center">
+                        <span class="price-tag me-3" style="font-size: 2rem; padding: 1rem 1.5rem;">$249.99</span>
+                        <div class="text-white">
+                            <div class="text-decoration-line-through text-white-50">$299.99</div>
+                            <div class="fw-bold text-warning">Save $50!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="#pre-order-form" class="btn btn-warning btn-lg px-4 py-3 fw-bold">
+                        <i class="fas fa-rocket me-2"></i>Pre-Order Now
+                    </a>
+                    <a href="#benefits" class="btn btn-outline-light btn-lg px-4 py-3">
+                        <i class="fas fa-gift me-2"></i>See Benefits
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <div class="position-relative">
+                    <div class="bg-white bg-opacity-15 rounded-circle d-inline-flex align-items-center justify-content-center position-relative" 
+                         style="width: 280px; height: 280px; backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.2);">
+                        <i class="fas fa-rocket fa-5x text-white" style="filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));"></i>
+                    </div>
+                    <div class="position-absolute top-0 start-0 w-100 h-100 rounded-circle" 
+                         style="background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%); animation: pulse 2s infinite;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="position-absolute" style="top: 20%; left: 10%; opacity: 0.1;">
+        <i class="fas fa-star fa-2x text-warning"></i>
+    </div>
+    <div class="position-absolute" style="top: 60%; right: 15%; opacity: 0.1;">
+        <i class="fas fa-gem fa-2x text-accent"></i>
+    </div>
+</section>
+
+
+<section class="py-5" id="benefits">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="content">
+                    <h1 id="premium-product---pre-order-now-available">Premium Product - Pre-Order Now Available!</h1>
+<h2 id="product-overview">Product Overview</h2>
+<p>Our flagship product represents the pinnacle of innovation and quality. Designed with cutting-edge technology and premium materials, this product delivers exceptional performance and reliability.</p>
+<p><strong>Limited Time Pre-Order Offer:</strong></p>
+<ul>
+<li><strong>Pre-Order Price</strong>: $249.99 (Save $50!)</li>
+<li><strong>Regular Price</strong>: $299.99</li>
+<li><strong>Expected Availability</strong>: March 15, 2024</li>
+<li><strong>Pre-Order Ends</strong>: February 28, 2024</li>
+</ul>
+<h3 id="pre-order-benefits">Pre-Order Benefits:</h3>
+<ul>
+<li>✅ <strong>Early Access</strong> - Get it before anyone else</li>
+<li>✅ <strong>Special Pre-order Price</strong> - Save $50 off retail</li>
+<li>✅ <strong>Priority Shipping</strong> - First in line when available</li>
+<li>✅ <strong>Exclusive Pre-order Bonus</strong> - Limited edition packaging</li>
+</ul>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Advanced Technology</strong>: State-of-the-art components for optimal performance</li>
+<li><strong>Premium Quality</strong>: Crafted with the finest materials for lasting durability</li>
+<li><strong>24/7 Support</strong>: Round-the-clock customer service and technical support</li>
+<li><strong>Free Shipping</strong>: Complimentary shipping on all orders</li>
+</ul>
+<h2 id="specifications">Specifications</h2>
+<ul>
+<li><strong>Dimensions</strong>: 10&quot; x 8&quot; x 2&quot;</li>
+<li><strong>Weight</strong>: 2.5 lbs</li>
+<li><strong>Material</strong>: Premium aluminum and carbon fiber</li>
+<li><strong>Warranty</strong>: 3-year comprehensive warranty</li>
+<li><strong>Color Options</strong>: Silver, Black, Gold</li>
+</ul>
+<h2 id="why-choose-our-product">Why Choose Our Product?</h2>
+<p>Our product stands out from the competition with its superior quality, innovative design, and exceptional customer service. We&rsquo;re committed to providing you with the best possible experience.</p>
+<h2 id="pre-order-process">Pre-Order Process</h2>
+<ol>
+<li><strong>Place Your Pre-Order</strong> - Use the form below</li>
+<li><strong>Confirmation</strong> - Receive immediate confirmation email</li>
+<li><strong>Updates</strong> - Get regular updates on production progress</li>
+<li><strong>Shipping</strong> - Priority shipping when available</li>
+<li><strong>Enjoy</strong> - Be among the first to experience our premium product</li>
+</ol>
+<hr>
+<h2 id="contact-information">Contact Information</h2>
+<p><strong>Email</strong>: <a href="mailto:sales@company.com">sales@company.com</a><br>
+<strong>Phone</strong>: <a href="tel:+15551234567">+1 (555) 123-4567</a><br>
+<strong>Address</strong>: 123 Business St, City, State 12345<br>
+<strong>Business Hours</strong>: Monday - Friday, 9:00 AM - 6:00 PM EST</p>
+<h3 id="get-in-touch">Get in Touch</h3>
+<p>Have questions about our product or pre-order? Our knowledgeable team is here to help! Reach out to us through any of the contact methods above, and we&rsquo;ll get back to you promptly.</p>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                
+                <div class="card feature-card mb-4 border-0" style="background: linear-gradient(135deg, var(--card-bg), var(--dark-bg));">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-4">
+                            <div class="bg-warning bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                                 style="width: 60px; height: 60px;">
+                                <i class="fas fa-shopping-cart fa-2x text-warning"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Pre-Order Summary</h5>
+                        </div>
+                        
+                        <div class="mb-4 p-3 rounded" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2);">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="text-muted">Pre-Order Price:</span>
+                                <span class="price-tag" style="font-size: 1.1rem; padding: 0.5rem 1rem;">$249.99</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted">Regular Price:</span>
+                                <span class="text-decoration-line-through text-muted">$299.99</span>
+                            </div>
+                        </div>
+                        
+                        <div class="row g-3 mb-4">
+                            <div class="col-6">
+                                <div class="text-center p-3 rounded" style="background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.2);">
+                                    <div class="text-warning fw-bold">March 15, 2024</div>
+                                    <small class="text-muted">Available</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-center p-3 rounded" style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2);">
+                                    <div class="text-danger fw-bold">Feb 28, 2024</div>
+                                    <small class="text-muted">Ends</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#pre-order-form" class="btn btn-warning w-100 fw-bold py-3">
+                            <i class="fas fa-rocket me-2"></i>Pre-Order Now
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="card feature-card border-0" style="background: linear-gradient(135deg, var(--card-bg), var(--dark-bg));">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-4">
+                            <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                                 style="width: 60px; height: 60px;">
+                                <i class="fas fa-gift fa-2x text-success"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Pre-Order Benefits</h5>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="d-flex align-items-center p-3 rounded" style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2);">
+                                <div class="bg-success rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                     style="width: 32px; height: 32px;">
+                                    <i class="fas fa-check text-white fa-sm"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Early Access</div>
+                                    <small class="text-muted">Get it first</small>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center p-3 rounded" style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2);">
+                                <div class="bg-success rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                     style="width: 32px; height: 32px;">
+                                    <i class="fas fa-check text-white fa-sm"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Save $50</div>
+                                    <small class="text-muted">Special pricing</small>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center p-3 rounded" style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2);">
+                                <div class="bg-success rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                     style="width: 32px; height: 32px;">
+                                    <i class="fas fa-check text-white fa-sm"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Priority Shipping</div>
+                                    <small class="text-muted">First in line</small>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center p-3 rounded" style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2);">
+                                <div class="bg-success rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                     style="width: 32px; height: 32px;">
+                                    <i class="fas fa-check text-white fa-sm"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Exclusive Bonus</div>
+                                    <small class="text-muted">Limited edition</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="pre-order-form" class="py-5 position-relative" style="background: linear-gradient(135deg, var(--light-bg) 0%, var(--dark-bg) 100%);">
+    <div class="position-absolute w-100 h-100" style="background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.05) 0%, transparent 20%), radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.03) 0%, transparent 20%);"></div>
+    
+    <div class="container position-relative">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center mb-5">
+                <div class="mb-4">
+                    <span class="badge bg-warning text-dark px-4 py-2 mb-3" style="font-size: 1rem;">
+                        <i class="fas fa-clock me-2"></i>Limited Time Offer
+                    </span>
+                </div>
+                <h2 class="display-4 fw-bold mb-4">🚀 Place Your Pre-Order</h2>
+                <p class="lead mb-0" style="font-size: 1.25rem;">Fill out the form below to secure your pre-order and save $50!</p>
+            </div>
+        </div>
+        
+        <div class="row g-5">
+            
+            <div class="col-lg-8 mx-auto">
+                <div class="contact-card border-0" style="background: linear-gradient(135deg, var(--card-bg), var(--dark-bg)); backdrop-filter: blur(10px);">
+                    <div class="text-center mb-5">
+                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px;">
+                            <i class="fas fa-shopping-cart fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="fw-bold">Pre-Order Form</h3>
+                        <p class="text-muted">Complete your pre-order in just a few steps</p>
+                    </div>
+                    
+                    <form action="/webhook/pre-order" method="POST" id="pre-order-form">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label fw-bold">
+                                        <i class="fas fa-user text-primary me-2"></i>First Name *
+                                    </label>
+                                    <input type="text" class="form-control form-control-lg" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label fw-bold">
+                                        <i class="fas fa-user text-primary me-2"></i>Last Name *
+                                    </label>
+                                    <input type="text" class="form-control form-control-lg" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email" class="form-label fw-bold">
+                                        <i class="fas fa-envelope text-primary me-2"></i>Email *
+                                    </label>
+                                    <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="your.email@example.com" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="phone" class="form-label fw-bold">
+                                        <i class="fas fa-phone text-primary me-2"></i>Phone *
+                                    </label>
+                                    <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="+1 (555) 123-4567" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="quantity" class="form-label fw-bold">
+                                        <i class="fas fa-sort-numeric-up text-primary me-2"></i>Quantity *
+                                    </label>
+                                    <select class="form-control form-control-lg" id="quantity" name="quantity" required>
+                                        <option value="">Select quantity</option>
+                                        <option value="1">1 - $249.99</option>
+                                        <option value="2">2 - $499.98</option>
+                                        <option value="3">3 - $749.97</option>
+                                        <option value="4">4 - $999.96</option>
+                                        <option value="5">5 - $1,249.95</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="color" class="form-label fw-bold">
+                                        <i class="fas fa-palette text-primary me-2"></i>Color Preference
+                                    </label>
+                                    <select class="form-control form-control-lg" id="color" name="color">
+                                        <option value="">Select color</option>
+                                        <option value="silver">Silver</option>
+                                        <option value="black">Black</option>
+                                        <option value="gold">Gold</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="specialRequests" class="form-label fw-bold">
+                                        <i class="fas fa-comment text-primary me-2"></i>Special Requests
+                                    </label>
+                                    <textarea class="form-control" id="specialRequests" name="specialRequests" rows="4" placeholder="Any special requests, notes, or questions..."></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check p-4 rounded" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2);">
+                                    <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                    <label class="form-check-label fw-bold" for="agreeTerms">
+                                        I agree to the <a href="#" class="text-primary">pre-order terms and conditions</a> *
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-warning btn-lg px-5 py-4 fw-bold" style="font-size: 1.2rem;">
+                                        <i class="fas fa-rocket me-3"></i>Place Pre-Order - $249.99
+                                    </button>
+                                    <p class="text-muted mt-3">
+                                        <i class="fas fa-shield-alt me-2"></i>* No payment required now. You'll be contacted for payment details.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Questions About Pre-Ordering?</h2>
+                <p class="lead">Our team is here to help with any questions about the pre-order process.</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            
+            <div class="col-lg-4">
+                <div class="contact-card h-100">
+                    <h4 class="mb-4">
+                        <i class="fas fa-address-card text-primary me-2"></i>Contact Info
+                    </h4>
+                    
+                    <div class="mb-4">
+                        <h6><i class="fas fa-envelope text-primary me-2"></i>Email</h6>
+                        <a href="mailto:sales@company.com" class="text-decoration-none">
+                            sales@company.com
+                        </a>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6><i class="fas fa-phone text-primary me-2"></i>Phone</h6>
+                        <a href="tel:+15551234567" class="text-decoration-none">
+                            +1 (555) 123-4567
+                        </a>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6><i class="fas fa-map-marker-alt text-primary me-2"></i>Address</h6>
+                        <p class="mb-0">123 Business St, City, State 12345</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6><i class="fas fa-clock text-primary me-2"></i>Business Hours</h6>
+                        <p class="mb-0">Mon-Fri: 9AM-6PM EST</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="col-lg-8">
+                <div class="contact-card h-100">
+                    <h4 class="mb-4">
+                        <i class="fas fa-paper-plane text-primary me-2"></i>Send us a Message
+                    </h4>
+                    
+                    <form action="/webhook/contact" method="POST" id="contact-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="contactFirstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="contactFirstName" name="firstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="contactLastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="contactLastName" name="lastName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="contactEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="contactEmail" name="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="contactPhone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="contactPhone" name="phone">
+                            </div>
+                            <div class="col-12">
+                                <label for="contactSubject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="contactSubject" name="subject" value="Pre-Order Question" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="contactMessage" class="form-label">Message</label>
+                                <textarea class="form-control" id="contactMessage" name="message" rows="5" placeholder="Ask us anything about the pre-order process..." required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    
+    <footer class="py-4 mt-5" style="background-color: var(--dark-bg); color: white;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Product Site</h5>
+                    <p class="mb-0">Delivering quality products with exceptional service.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">&copy; 2025 Product Site. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
